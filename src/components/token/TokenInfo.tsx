@@ -39,13 +39,19 @@ export function TokenInfo() {
         ],
     });
 
-    if (isPending) return <div>Loading...</div>;
-    if (error) return <div>Error loading token info</div>;
+    if (isPending)
+        return <div className=" col-span-2 md:col-span-3">Loading...</div>;
+    if (error)
+        return (
+            <div className="col-span-2 md:col-span-3">
+                Error loading token info
+            </div>
+        );
 
     const [name, symbol, totalSupply, decimals, owner, paused] = data || [];
 
     return (
-        <Card className=" overflow-hidden">
+        <Card className=" overflow-hidden col-span-2 md:col-span-3">
             <CardHeader>
                 <CardTitle>Token Information</CardTitle>
             </CardHeader>

@@ -42,7 +42,7 @@ const TokenBalanceViewer = () => {
     };
 
     return (
-        <Card className="w-full max-w-md">
+        <Card className=" w-full">
             <CardHeader>
                 <CardTitle>Token Balance Checker</CardTitle>
             </CardHeader>

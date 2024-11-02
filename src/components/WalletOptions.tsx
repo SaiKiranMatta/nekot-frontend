@@ -8,7 +8,7 @@ export function WalletOptions() {
     const { connectors, connect } = useConnect();
 
     return (
-        <Card className=" max-w-3xl min-w-96 mx-auto mt-28">
+        <Card className=" max-w-3xl min-w-96 mx-auto mt-8">
             <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                     <Wallet className="h-6 w-6" />

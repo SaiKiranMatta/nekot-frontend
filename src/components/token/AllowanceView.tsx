@@ -67,7 +67,7 @@ export function AllowanceView() {
     };
 
     return (
-        <Card className="w-full max-w-md overflow-hidden">
+        <Card className="w-full  overflow-hidden">
             <CardHeader>
                 <CardTitle>Check Allowance</CardTitle>
             </CardHeader>
