@@ -1,48 +1,30 @@
-'use client'
+"use client";
 
-import { useAccount, useConnect, useDisconnect } from 'wagmi'
+import { Account } from "@/components/Account";
+import { ApproveSpender } from "@/components/token/ApproveSpender";
+import { BurnToken } from "@/components/token/BurnToken";
+import { TransferToken } from "@/components/token/TransferToken";
+import { ViewBalance } from "@/components/token/ViewBalance";
+import { WalletOptions } from "@/components/WalletOptions";
+import { useAccount } from "wagmi";
 
 function App() {
-  const account = useAccount()
-  const { connectors, connect, status, error } = useConnect()
-  const { disconnect } = useDisconnect()
-
-  return (
-    <>
-      <div>
-        <h2>Account</h2>
-
-        <div>
-          status: {account.status}
-          <br />
-          addresses: {JSON.stringify(account.addresses)}
-          <br />
-          chainId: {account.chainId}
+    const { isConnected, address } = useAccount();
+    return (
+        <div className=" min-h-screen  max-w-screen flex flex-col justify-center items-center">
+            {isConnected && address ? (
+                <div className=" flex flex-col space-y-4">
+                    <Account />
+                    <ViewBalance address={address} />
+                    <TransferToken />
+                    <ApproveSpender />
+                    <BurnToken />
+                </div>
+            ) : (
+                <WalletOptions />
+            )}
         </div>
-
-        {account.status === 'connected' && (
-          <button type="button" onClick={() => disconnect()}>
-            Disconnect
-          </button>
-        )}
-      </div>
-
-      <div>
-        <h2>Connect</h2>
-        {connectors.map((connector) => (
-          <button
-            key={connector.uid}
-            onClick={() => connect({ connector })}
-            type="button"
-          >
-            {connector.name}
-          </button>
-        ))}
-        <div>{status}</div>
-        <div>{error?.message}</div>
-      </div>
-    </>
-  )
+    );
 }
 
-export default App
+export default App;
