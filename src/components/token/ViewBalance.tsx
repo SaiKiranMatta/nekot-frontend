@@ -22,7 +22,7 @@ export function ViewBalance({ address }: { address: `0x${string}` }) {
         );
 
     return (
-        <Card>
+        <Card className=" overflow-hidden">
             <CardHeader>
                 <CardTitle>Token Balance</CardTitle>
             </CardHeader>

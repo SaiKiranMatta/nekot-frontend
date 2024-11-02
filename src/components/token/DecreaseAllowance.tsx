@@ -31,7 +31,7 @@ export function DecreaseAllowance() {
         useWaitForTransactionReceipt({ hash });
 
     return (
-        <Card>
+        <Card className=" overflow-hidden">
             <CardHeader>
                 <CardTitle>Decrease Allowance</CardTitle>
             </CardHeader>
@@ -58,7 +58,7 @@ export function DecreaseAllowance() {
                         {isPending ? "Confirming..." : "Decrease Allowance"}
                     </Button>
                     {hash && (
-                        <div className="text-sm">Transaction Hash: {hash}</div>
+                        <div className="text-xs">Transaction Hash: {hash}</div>
                     )}
                     {isConfirming && (
                         <div className="text-sm">

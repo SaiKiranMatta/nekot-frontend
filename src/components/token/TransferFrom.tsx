@@ -32,7 +32,7 @@ export function TransferFrom() {
         useWaitForTransactionReceipt({ hash });
 
     return (
-        <Card>
+        <Card className=" overflow-hidden">
             <CardHeader>
                 <CardTitle>Transfer From</CardTitle>
             </CardHeader>
@@ -63,7 +63,7 @@ export function TransferFrom() {
                         {isPending ? "Confirming..." : "Transfer From"}
                     </Button>
                     {hash && (
-                        <div className="text-sm">Transaction Hash: {hash}</div>
+                        <div className="text-xs">Transaction Hash: {hash}</div>
                     )}
                     {isConfirming && (
                         <div className="text-sm">

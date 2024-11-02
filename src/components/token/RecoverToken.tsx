@@ -31,7 +31,7 @@ export function RecoverToken() {
         useWaitForTransactionReceipt({ hash });
 
     return (
-        <Card>
+        <Card className=" overflow-hidden">
             <CardHeader>
                 <CardTitle>Recover ERC20 Tokens</CardTitle>
             </CardHeader>
@@ -58,7 +58,7 @@ export function RecoverToken() {
                         {isPending ? "Confirming..." : "Recover Tokens"}
                     </Button>
                     {hash && (
-                        <div className="text-sm">Transaction Hash: {hash}</div>
+                        <div className="text-xs">Transaction Hash: {hash}</div>
                     )}
                     {isConfirming && (
                         <div className="text-sm">

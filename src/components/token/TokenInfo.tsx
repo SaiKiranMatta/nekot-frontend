@@ -45,7 +45,7 @@ export function TokenInfo() {
     const [name, symbol, totalSupply, decimals, owner, paused] = data || [];
 
     return (
-        <Card>
+        <Card className=" overflow-hidden">
             <CardHeader>
                 <CardTitle>Token Information</CardTitle>
             </CardHeader>

@@ -30,7 +30,7 @@ export function BurnToken() {
         useWaitForTransactionReceipt({ hash });
 
     return (
-        <Card>
+        <Card className=" overflow-hidden">
             <CardHeader>
                 <CardTitle>Burn Tokens</CardTitle>
             </CardHeader>
@@ -52,7 +52,7 @@ export function BurnToken() {
                         {isPending ? "Confirming..." : "Burn"}
                     </Button>
                     {hash && (
-                        <div className="text-sm">Transaction Hash: {hash}</div>
+                        <div className="text-xs">Transaction Hash: {hash}</div>
                     )}
                     {isConfirming && (
                         <div className="text-sm">

@@ -31,7 +31,7 @@ export function MintToken() {
         useWaitForTransactionReceipt({ hash });
 
     return (
-        <Card>
+        <Card className=" overflow-hidden">
             <CardHeader>
                 <CardTitle>Mint Tokens</CardTitle>
             </CardHeader>
@@ -57,7 +57,7 @@ export function MintToken() {
                         {isPending ? "Confirming..." : "Mint"}
                     </Button>
                     {hash && (
-                        <div className="text-sm">Transaction Hash: {hash}</div>
+                        <div className="text-xs">Transaction Hash: {hash}</div>
                     )}
                     {isConfirming && (
                         <div className="text-sm">

@@ -47,7 +47,7 @@ export function TokenControls() {
         useWaitForTransactionReceipt({ hash });
 
     return (
-        <Card>
+        <Card className=" overflow-hidden">
             <CardHeader>
                 <CardTitle>Token Controls</CardTitle>
             </CardHeader>
@@ -87,7 +87,7 @@ export function TokenControls() {
                 </form>
 
                 {hash && (
-                    <div className="text-sm">Transaction Hash: {hash}</div>
+                    <div className="text-xs">Transaction Hash: {hash}</div>
                 )}
                 {isConfirming && (
                     <div className="text-sm">Waiting for confirmation...</div>

@@ -31,7 +31,7 @@ export function ApproveSpender() {
         useWaitForTransactionReceipt({ hash });
 
     return (
-        <Card>
+        <Card className=" overflow-hidden">
             <CardHeader>
                 <CardTitle>Approve Spender</CardTitle>
             </CardHeader>
@@ -57,7 +57,7 @@ export function ApproveSpender() {
                         {isPending ? "Confirming..." : "Approve"}
                     </Button>
                     {hash && (
-                        <div className="text-sm">Transaction Hash: {hash}</div>
+                        <div className="text-xs">Transaction Hash: {hash}</div>
                     )}
                     {isConfirming && (
                         <div className="text-sm">

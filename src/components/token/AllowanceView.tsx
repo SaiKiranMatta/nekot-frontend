@@ -28,7 +28,7 @@ export function AllowanceView() {
     };
 
     return (
-        <Card>
+        <Card className=" overflow-hidden">
             <CardHeader>
                 <CardTitle>Check Allowance</CardTitle>
             </CardHeader>
@@ -48,7 +48,9 @@ export function AllowanceView() {
                         }
                         required
                     />
-                    <Button type="submit">Check Allowance</Button>
+                    <Button type="submit" className=" w-full">
+                        Check Allowance
+                    </Button>
 
                     {isPending && <div>Loading...</div>}
                     {/* {error && (
