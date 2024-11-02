@@ -32,7 +32,7 @@ A modern, responsive web interface for interacting with ERC-20 tokens built with
 
 ```bash
 # Clone the repository
-git clone <your-repository-url>
+git clone https://github.com/SaiKiranMatta/nekot-frontend.git
 
 # Install dependencies
 npm install
