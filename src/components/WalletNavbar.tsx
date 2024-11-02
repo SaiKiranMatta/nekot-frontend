@@ -85,10 +85,9 @@ const WalletNavbar = () => {
 
     return (
         <nav className="w-screen bg-background border-b  flex fixed top-0 z-50">
-            <div className=" px-4 py-3 w-full">
+            <div className=" px-8 py-3 w-full">
                 <div className="flex justify-between items-center">
                     <div className="text-xl font-bold">Nekot tokeN</div>
-
                     <div className="flex items-center gap-4 mx-4">
                         {isConnected ? (
                             <div className="flex items-center gap-2">

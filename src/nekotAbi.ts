@@ -161,5 +161,4 @@ export const nekotAbi = [
     },
 ] as const;
 
-export const CONTRACT_ADDRESS =
-    "0x300BDFABa3bEE8382A3f22642606EB6bCAD81E36" as const;
+export const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS;
