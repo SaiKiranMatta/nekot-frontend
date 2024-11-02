@@ -24,7 +24,7 @@ export function ViewBalance({ address }: { address: `0x${string}` }) {
     return (
         <Card className=" overflow-hidden">
             <CardHeader>
-                <CardTitle>Token Balance</CardTitle>
+                <CardTitle>Your Token Balance</CardTitle>
             </CardHeader>
             <CardContent>
                 <div>Balance: {data ? formatEther(data) : "0"} NKT</div>
