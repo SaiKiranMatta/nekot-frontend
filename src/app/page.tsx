@@ -1,48 +1,22 @@
-'use client'
+"use client";
 
-import { useAccount, useConnect, useDisconnect } from 'wagmi'
+import { WalletOptions } from "@/components/WalletOptions";
+import { useAccount } from "wagmi";
+import TokenInteractions from "@/components/token/TokenInteractions";
 
 function App() {
-  const account = useAccount()
-  const { connectors, connect, status, error } = useConnect()
-  const { disconnect } = useDisconnect()
-
-  return (
-    <>
-      <div>
-        <h2>Account</h2>
-
-        <div>
-          status: {account.status}
-          <br />
-          addresses: {JSON.stringify(account.addresses)}
-          <br />
-          chainId: {account.chainId}
+    const { isConnected, address } = useAccount();
+    return (
+        <div className=" min-h-screen flex flex-col items-center ">
+            {isConnected && address ? (
+                <TokenInteractions address={address} />
+            ) : (
+                <div className="min-h-screen flex flex-col items-center justify-center">
+                    <WalletOptions />
+                </div>
+            )}
         </div>
-
-        {account.status === 'connected' && (
-          <button type="button" onClick={() => disconnect()}>
-            Disconnect
-          </button>
-        )}
-      </div>
-
-      <div>
-        <h2>Connect</h2>
-        {connectors.map((connector) => (
-          <button
-            key={connector.uid}
-            onClick={() => connect({ connector })}
-            type="button"
-          >
-            {connector.name}
-          </button>
-        ))}
-        <div>{status}</div>
-        <div>{error?.message}</div>
-      </div>
-    </>
-  )
+    );
 }
 
-export default App
+export default App;
