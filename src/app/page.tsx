@@ -1,6 +1,7 @@
 "use client";
 
 import { Account } from "@/components/Account";
+import { AllowanceView } from "@/components/token/AllowanceView";
 import { ApproveSpender } from "@/components/token/ApproveSpender";
 import { BurnToken } from "@/components/token/BurnToken";
 import { TokenInfo } from "@/components/token/TokenInfo";
@@ -22,6 +23,7 @@ function App() {
                     <TransferToken />
                     <ApproveSpender />
                     <TransferFrom />
+                    <AllowanceView />
                     <BurnToken />
                 </div>
             ) : (
