@@ -16,8 +16,12 @@ export const metadata: Metadata = {
     description: "TeneT of Tokens",
 };
 
-export default function RootLayout(props: { children: ReactNode }) {
-    const initialState = cookieToInitialState(config, headers().get("cookie"));
+export default async function RootLayout(props: { children: ReactNode }) {
+    const headersList = await headers();
+    const initialState = await cookieToInitialState(
+        config,
+        headersList.get("cookie")
+    );
     return (
         <html lang="en">
             <body className={`${inter.className} w-screen overflow-x-hidden`}>
